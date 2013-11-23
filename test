@@ -1,0 +1,145 @@
+[
+    {
+        "RouteID": 31,
+        "RouteStopID": 71,
+        "StopTimes": [
+            {
+                "ArrivalTime": "/Date(-62135575200000-0600)/",
+                "DepartureTime": "/Date(-62135575200000-0600)/",
+                "EstimateTime": "/Date(1385329615520)/",
+                "SecondsToStop": 605,
+                "StopTime": "/Date(-62135575200000-0600)/"
+            }
+        ]
+    },
+    {
+        "RouteID": 31,
+        "RouteStopID": 72,
+        "StopTimes": [
+            {
+                "ArrivalTime": "/Date(-62135575200000-0600)/",
+                "DepartureTime": "/Date(-62135575200000-0600)/",
+                "EstimateTime": "/Date(1385329305520)/",
+                "SecondsToStop": 295,
+                "StopTime": "/Date(-62135575200000-0600)/"
+            }
+        ]
+    },
+    {
+        "RouteID": 31,
+        "RouteStopID": 73,
+        "StopTimes": [
+            {
+                "ArrivalTime": "/Date(-62135575200000-0600)/",
+                "DepartureTime": "/Date(-62135575200000-0600)/",
+                "EstimateTime": "/Date(1385329065520)/",
+                "SecondsToStop": 55,
+                "StopTime": "/Date(-62135575200000-0600)/"
+            }
+        ]
+    },
+    {
+        "RouteID": 31,
+        "RouteStopID": 148,
+        "StopTimes": [
+            {
+                "ArrivalTime": "/Date(-62135575200000-0600)/",
+                "DepartureTime": "/Date(-62135575200000-0600)/",
+                "EstimateTime": "/Date(1385329855520)/",
+                "SecondsToStop": 845,
+                "StopTime": "/Date(-62135575200000-0600)/"
+            }
+        ]
+    },
+    {
+        "RouteID": 31,
+        "RouteStopID": 178,
+        "StopTimes": [
+            {
+                "ArrivalTime": "/Date(-62135575200000-0600)/",
+                "DepartureTime": "/Date(-62135575200000-0600)/",
+                "EstimateTime": "/Date(1385329545520)/",
+                "SecondsToStop": 535,
+                "StopTime": "/Date(-62135575200000-0600)/"
+            }
+        ]
+    },
+    {
+        "RouteID": 38,
+        "RouteStopID": 113,
+        "StopTimes": [
+            {
+                "ArrivalTime": "/Date(-62135575200000-0600)/",
+                "DepartureTime": "/Date(-62135575200000-0600)/",
+                "EstimateTime": "/Date(1385329649520)/",
+                "SecondsToStop": 640,
+                "StopTime": "/Date(-62135575200000-0600)/"
+            }
+        ]
+    },
+    {
+        "RouteID": 38,
+        "RouteStopID": 114,
+        "StopTimes": [
+            {
+                "ArrivalTime": "/Date(-62135575200000-0600)/",
+                "DepartureTime": "/Date(-62135575200000-0600)/",
+                "EstimateTime": "/Date(1385329829520)/",
+                "SecondsToStop": 820,
+                "StopTime": "/Date(-62135575200000-0600)/"
+            }
+        ]
+    },
+    {
+        "RouteID": 38,
+        "RouteStopID": 115,
+        "StopTimes": [
+            {
+                "ArrivalTime": "/Date(-62135575200000-0600)/",
+                "DepartureTime": "/Date(-62135575200000-0600)/",
+                "EstimateTime": "/Date(1385329039520)/",
+                "SecondsToStop": 30,
+                "StopTime": "/Date(-62135575200000-0600)/"
+            }
+        ]
+    },
+    {
+        "RouteID": 38,
+        "RouteStopID": 116,
+        "StopTimes": [
+            {
+                "ArrivalTime": "/Date(-62135575200000-0600)/",
+                "DepartureTime": "/Date(-62135575200000-0600)/",
+                "EstimateTime": "/Date(1385329399520)/",
+                "SecondsToStop": 390,
+                "StopTime": "/Date(-62135575200000-0600)/"
+            }
+        ]
+    },
+    {
+        "RouteID": 38,
+        "RouteStopID": 176,
+        "StopTimes": [
+            {
+                "ArrivalTime": "/Date(-62135575200000-0600)/",
+                "DepartureTime": "/Date(-62135575200000-0600)/",
+                "EstimateTime": "/Date(1385329579520)/",
+                "SecondsToStop": 570,
+                "StopTime": "/Date(-62135575200000-0600)/"
+            }
+        ]
+    },
+    {
+        "RouteID": 38,
+        "RouteStopID": 192,
+        "StopTimes": [
+            {
+                "ArrivalTime": "/Date(-62135575200000-0600)/",
+                "DepartureTime": "/Date(-62135575200000-0600)/",
+                "EstimateTime": "/Date(1385330069520)/",
+                "SecondsToStop": 1060,
+                "StopTime": "/Date(-62135575200000-0600)/"
+            }
+        ]
+    }
+]
