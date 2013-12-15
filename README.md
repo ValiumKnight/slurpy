@@ -23,6 +23,7 @@ You can also set your defaults in ~/.slurpy like so
     $ slurpy config {origin=> "Day 1 North", destination => "Convention Center"}
 
 and then do
+
     $ slurpy next
     $ slurpy next --return
     $ slurpy next "Blackfoot"
