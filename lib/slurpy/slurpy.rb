@@ -48,7 +48,7 @@ class Slurpy <  Thor
             to_origin_shuttles[route_id] < to_destination_shuttles[route_id]
         end
 
-    Slurpy.error "No shuttles from '#{origin_name}' to '#{destination_name}', sorry. " \
+    Slurpy.error "No shuttles from '#{origin_name}' to '#{destination_name}' right now, sorry. " \
                  "See http://www.slushuttle.com/ for more details." \
                    if origin_to_destination_shuttles.empty?
 

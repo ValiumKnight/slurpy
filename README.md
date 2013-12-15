@@ -16,11 +16,11 @@ Use by doing the following:
 
     $ slurpy next "Day 1" "Convention"
 
-to get the next stop time for any SLU shuttle going from "Day 1 North" to "Convention Seattle".
+to get the next stop time for any SLU shuttle going from "Day 1 North" to "Convention Place".
 
 You can also set your defaults in ~/.slurpy like so
 
-    $ slurpy config --origin 'Day 1 North' --destination 'Convention Center'
+    $ slurpy config --origin 'Day 1 North' --destination 'Convention Place'
 
 and then do
 
@@ -28,8 +28,8 @@ and then do
     $ slurpy next --return
     $ slurpy next "Blackfoot"
 
-* The first will search the times for the default route (Day 1 North -> Convention Center).
-* The second will search the times for the default route, inverted (Day 1 North -> Convention Center)
+* The first will search the times for the default route (Day 1 North -> Convention Place).
+* The second will search the times for the default route, inverted (Day 1 North -> Convention Place)
 * The third will search the times for the default origin (Prime) to Blackfoot
 
 ## Contributing
