@@ -20,7 +20,7 @@ to get the next stop time for any SLU shuttle going from "Day 1 North" to "Conve
 
 You can also set your defaults in ~/.slurpy like so
 
-    $ slurpy config {origin=> "Day 1 North", destination => "Convention Center"}
+    $ slurpy config --origin 'Day 1 North' --destination 'Convention Center'
 
 and then do
 

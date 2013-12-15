@@ -29,7 +29,7 @@ class Slurpy <  Thor
 
   option :return, :type => :boolean
 
-  desc 'next origin, destination', 'Returns the next routes from A to B'
+  desc 'next origin destination', 'Returns the next routes from origin to destination'
   def next(origin = defaults['origin'], destination = defaults['destination'])
 
     origin, destination = destination, origin if options[:return]
@@ -59,6 +59,22 @@ class Slurpy <  Thor
     end
   end
 
+  method_option :origin, :type => :string, :required => true
+  method_option :destination, :type => :string, :required => true
+
+  desc 'config', 'Sets the defaults origin and destination'
+  def config
+
+    settings = { 
+      'origin' => options[:origin],
+      'destination' => options[:destination]
+    }
+
+    File.open(DEFAULTS_FILE, "w") do |file|
+      file.write settings.to_yaml
+    end
+  end
+
   private #####################################################################
 
   def defaults
@@ -66,6 +82,11 @@ class Slurpy <  Thor
       File.exists?(DEFAULTS_FILE)
 
     @defaults ||= ::YAML::load_file(DEFAULTS_FILE)
+
+    Slurpy.error 'Invalid default origin' unless @defaults['origin']
+    Slurpy.error 'Invalid default destination' unless @defaults['destination']
+
+    @defaults
   end
 
   def self.error(message)
@@ -128,7 +149,7 @@ class Slurpy <  Thor
   def self.get_stop(query)
     Slurpy.from_cache "stop::#{query}", lambda {
       infos = request(:stops)
-        .select { |stop| stop['Description'].include? query }
+        .select { |stop| stop['Description'].downcase.include? query.downcase }
 
       stops = infos.map{ |stop| stop['Description']}.to_set.to_a
 
