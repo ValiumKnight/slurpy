@@ -157,12 +157,12 @@ class Slurpy <  Thor
 
       error = "No stop matches '#{query}', sorry." if stops.empty?
 
-      error = "Your request for stop '#{query}' is not specific enough. " \
-              "Pick one: #{stops.inspect}" if stops.size > 1
+      #error = "Your request for stop '#{query}' is not specific enough. " \
+      #        "Pick one: #{stops.inspect}" if stops.size > 1
 
       Slurpy.error error if error
 
-      return infos, stops.first
+      return infos, stops
     }
   end
 
