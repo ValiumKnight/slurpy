@@ -25,4 +25,5 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "thor"
   spec.add_runtime_dependency "api_cache"
   spec.add_runtime_dependency "moneta"
+  spec.add_runtime_dependency "timezone"
 end

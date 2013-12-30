@@ -9,10 +9,12 @@ require 'typhoeus'
 require 'thor'
 require 'api_cache'
 require 'moneta'
+require 'timezone'
 
 class Slurpy <  Thor
   DEFAULTS_FILE = "#{Dir.home}/.slurpy"
   CACHE_FOLDER = '/tmp/slurpy/cache'
+  TIMEZONE = 'America/Los_Angeles'
 
   BASE_URL = 'http://www.slushuttle.com/Services/JSONPRelay.svc/'
 
@@ -65,7 +67,7 @@ class Slurpy <  Thor
   desc 'config', 'Sets the defaults origin and destination'
   def config
 
-    settings = { 
+    settings = {
       'origin' => options[:origin],
       'destination' => options[:destination]
     }
@@ -78,7 +80,7 @@ class Slurpy <  Thor
   private #####################################################################
 
   def defaults
-    Slurpy.error 'Slurpy needs params unless .slurpy exists' unless 
+    Slurpy.error 'Slurpy needs params unless .slurpy exists' unless
       File.exists?(DEFAULTS_FILE)
 
     @defaults ||= ::YAML::load_file(DEFAULTS_FILE)
@@ -171,13 +173,15 @@ class Slurpy <  Thor
 
   def self.extract_date(date)
     epoch_time_in_seconds = date
-        .to_s 
+        .to_s
         .scan(%r(/Date\((\d+)\)/))
-        .flatten.first
+        .flatten.first.to_i / 1000
 
     Slurpy.error 'Failed to retrieve date from #{date}' unless epoch_time_in_seconds
-        
-    Time.at(epoch_time_in_seconds.to_i).strftime('%R')
+
+    timezone = Timezone::Zone.new :zone => TIMEZONE
+
+    timezone.time(Time.at(epoch_time_in_seconds)).strftime('%R')
   end
 end
 

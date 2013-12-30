@@ -83,36 +83,37 @@ describe "slurpy" do
 
       Slurpy.should_receive(:get_times).at_least(:once).times.and_return([
         {"RouteID" => "1", "RouteStopID" => "1", "StopTimes" =>
-          [{"DepartureTime" => "\/Date\(0\)/"}, {"DepartureTime" => "\/Date\(10000\)/"}]},
+          [{"DepartureTime" => "\/Date\(0\)/"}, {"DepartureTime" => "\/Date\(10000000\)/"}]},
         {"RouteID" => "1", "RouteStopID" => "2", "StopTimes" =>
-          [{"DepartureTime" => "\/Date\(10000\)/"}, {"DepartureTime" => "\/Date\(30000\)/"}]},
+          [{"DepartureTime" => "\/Date\(10000000\)/"}, {"DepartureTime" => "\/Date\(30000000\)/"}]},
         {"RouteID" => "2", "RouteStopID" => "1", "StopTimes" =>
-          [{"DepartureTime" => "\/Date\(1000\)/"}, {"DepartureTime" => "\/Date\(11000\)/"}]},
+          [{"DepartureTime" => "\/Date\(1000000\)/"}, {"DepartureTime" => "\/Date\(11000000\)/"}]},
         {"RouteID" => "2", "RouteStopID" => "2", "StopTimes" =>
-          [{"DepartureTime" => "\/Date\(11000\)/"}, {"DepartureTime" => "\/Date\(30000\)/"}]}
+          [{"DepartureTime" => "\/Date\(11000000\)/"}, {"DepartureTime" => "\/Date\(30000000\)/"}]}
       ])
 
       Slurpy.start(["next", "Day 1", "Convention"])
 
       expect(capture(:stdout) { Slurpy.start(["next", "Day 1", "Convention"]) })
         .to eq("Searching routes from 'Day 1 North' to 'Convention Center'...\n" \
-               "Route R10 - Departure: 19:00 Arrival: 21:46\n" \
-               "Route R11 - Departure: 19:16 Arrival: 22:03\n")
+               "Route R10 - Departure: 16:00 Arrival: 18:46\n" \
+               "Route R11 - Departure: 16:16 Arrival: 19:03\n")
     end
 
     it "errors if no route between a and b exists" do
-      Slurpy.should_receive(:error).once.with("No shuttles from 'Day 1 North' to 'Convention Center', sorry. " \
+      Slurpy.should_receive(:error).once.with("No shuttles from 'Day 1 North' to 'Convention Center' " \
+        "right now, sorry. " \
         "See http://www.slushuttle.com/ for more details.")
 
       Slurpy.should_receive(:get_times).at_least(:once).times.and_return([
         {"RouteID" => "1", "RouteStopID" => "1", "StopTimes" =>
-          [{"DepartureTime" => "\/Date\(0\)/"}, {"DepartureTime" => "\/Date\(10000\)/"}]},
+          [{"DepartureTime" => "\/Date\(0\)/"}, {"DepartureTime" => "\/Date\(10000000\)/"}]},
         {"RouteID" => "1", "RouteStopID" => "3", "StopTimes" =>
-          [{"DepartureTime" => "\/Date\(10000\)/"}, {"DepartureTime" => "\/Date\(30000\)/"}]},
+          [{"DepartureTime" => "\/Date\(10000000\)/"}, {"DepartureTime" => "\/Date\(30000000\)/"}]},
         {"RouteID" => "2", "RouteStopID" => "1", "StopTimes" =>
-          [{"DepartureTime" => "\/Date\(1000\)/"}, {"DepartureTime" => "\/Date\(11000\)/"}]},
+          [{"DepartureTime" => "\/Date\(1000000\)/"}, {"DepartureTime" => "\/Date\(11000000\)/"}]},
         {"RouteID" => "2", "RouteStopID" => "4", "StopTimes" =>
-          [{"DepartureTime" => "\/Date\(11000\)/"}, {"DepartureTime" => "\/Date\(30000\)/"}]}
+          [{"DepartureTime" => "\/Date\(11000000\)/"}, {"DepartureTime" => "\/Date\(30000000\)/"}]}
       ])
 
       Slurpy.start(["next", "Day 1", "Convention"])
@@ -121,7 +122,7 @@ describe "slurpy" do
 
   describe "extract_date" do
     it "converts an epoch date to time" do
-      Slurpy.extract_date("\/Date\(10000\)/").should eql "21:46"
+      Slurpy.extract_date("\/Date\(1388318968000\)/").should eql "04:09"
     end
   end
 end
